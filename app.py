@@ -19,7 +19,7 @@ consumer_secret = 'wvkav6VaaTTn9ekE2C56jERxMITyasf5NZLPmPIsANacfgnj9u'
 
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
-api = tw.API(auth, wait_on_rate_limit=True)
+api = tw.API(auth, wait_on_rate_limit=True, timeout=5)
 
 
 # In[2]:
