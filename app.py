@@ -435,18 +435,5 @@ if __name__ == '__main__':
     app.run_server(debug=False)
 
 
-# In[153]:
-
-
-import plotly.io as pio
-
-fig = px.pie(df_pie, values=[pos_num, neg_num, neu_num], names= ['Positive', 'Negative', 'Neutral'], title='MAGA Sentimentient Categories')
-
-pio.show(fig)
-
-
-# In[ ]:
-
-
 
 
