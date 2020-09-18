@@ -155,6 +155,7 @@ server = app.server
 #df.reset_index(inplace=True)
 print(df[:5])
 
+
 # ------------------------------------------------------------------------------
 # App layout
 app.layout = html.Div([
@@ -173,7 +174,19 @@ app.layout = html.Div([
     ]),
 
     html.Div([
-        dcc.Graph(id='the_graph')
+        dcc.Graph(id='pie-chart', figure={
+                                'data': [
+                                    go.Pie(
+                                        labels=['Positives', 'Negatives', 'Neutrals'], 
+                                        values=[pos_num, neg_num, neu_num],
+                                        name="View Metrics",
+                                        marker_colors=['rgba(184, 247, 212, 0.6)','rgba(255, 50, 50, 0.6)','rgba(131, 90, 241, 0.6)'],
+                                        textinfo='value',
+                                        hole=.65)
+                                ]
+
+                            })
+        
     ]),
 
 ])
@@ -184,16 +197,13 @@ app.layout = html.Div([
     [Input(component_id='my_dropdown', component_property='value')]
 )
 
-def update_graph(my_dropdown):
-    dff = df
+def update_graph(figure):
 
-    piechart=px.pie(
-            data_frame=dff,
-            names=my_dropdown,
-            hole=.3,
-            )
+    fig = px.pie(df_pie, values=[pos_num, neg_num, neu_num], 
+                 names= ['Positive', 'Negative', 'Neutral'], title='MAGA Sentimentient Categories')
+    
+    return fig
 
-    return (piechart)
 
 
 if __name__ == '__main__':
