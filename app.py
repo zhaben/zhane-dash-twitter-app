@@ -214,7 +214,7 @@ app.layout = html.Div([
 
 #---------------------------------------------------------------
 @app.callback(
-    Output(component_id='the_graph', component_property='figure'),
+    Output(component_id='pie-chart', component_property='figure'),
     [Input(component_id='my_dropdown', component_property='value')]
 )
 
