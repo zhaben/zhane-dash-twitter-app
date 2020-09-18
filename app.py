@@ -135,6 +135,20 @@ df_all.head()
 df = df_all
 df['sentiment_score'] = df.sentiment_score.astype('float')
 
+
+
+df_pie = df[df['hashtag'] == '#maga']
+
+pos_num = df_pie[df_pie['sentiment_category'] == 'positive']['sentiment_score'].count().astype(str)
+neg_num = df_pie[df_pie['sentiment_category'] == 'negative']['sentiment_score'].count().astype(str)
+neu_num = df_pie[df_pie['sentiment_category'] == 'neutral']['sentiment_score'].count().astype(str)
+
+scores = [pos_num, neg_num, neu_num]
+print(scores)
+fig = px.pie(df_pie, values=[pos_num, neg_num, neu_num], names= ['Positive', 'Negative', 'Neutral'], title='MAGA Sentimentient Categories')
+fig.show()
+
+
 import pandas as pd
 import plotly.express as px  # (version 4.7.0)
 import plotly.graph_objects as go
