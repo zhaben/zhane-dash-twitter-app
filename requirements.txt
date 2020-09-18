@@ -28,3 +28,4 @@ traitlets==4.3.2
 Werkzeug==0.15.4
 tweepy==3.6.0
 afinn==0.1
+plotly-express==0.4.1 
