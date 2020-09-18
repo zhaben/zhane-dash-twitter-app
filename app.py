@@ -134,59 +134,6 @@ df_all.head()
 
 
 
-
-
-df = df_all
-df['sentiment_score'] = df.sentiment_score.astype('float')
-df.groupby(by=['hashtag']).describe()
-
-
-
-
-
-
-# spread of sentiment polarity -- much higher in blm and maga, metoo has a lot more negative polarity
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-f, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 4))
-sp = sns.stripplot(x='hashtag', y="sentiment_score", 
-                   hue='hashtag', data=df, ax=ax1)
-bp = sns.boxplot(x='hashtag', y="sentiment_score", 
-                 hue='hashtag', data=df, palette="Set2", ax=ax2)
-t = f.suptitle('Visualizing Hashtag Sentiment', fontsize=14)
-plt.show()
-
-
-
-
-
-# frequency of sentiment labels
-f, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 4))
-sp = sns.stripplot(x='hashtag', y="sentiment_score", 
-                   hue='hashtag', data=df, ax=ax1)
-bp = sns.boxplot(x='hashtag', y="sentiment_score", 
-                 hue='hashtag', data=df, palette="Set2", ax=ax2)
-t = f.suptitle('Visualizing Hashtag Sentiment', fontsize=14)
-
-
-
-dp = sns.displot(x="hashtag", data=df, hue = 'sentiment_category', multiple="dodge", shrink=.8
-                )
-
-
-df[(df['hashtag'] == "#blm") & (df.sentiment_score == max(df.sentiment_score))]
-#the most positive tweet was about naomi osaka.
-
-
-df[(df['hashtag'] == "#blm") & (df.sentiment_score == min((df['hashtag'] == "#blm")))]
-
-df[(df['hashtag'] == "#maga") & (df.sentiment_score == min((df['hashtag'] == "#maga")))]
-
-
-
-
-
 import pandas as pd
 import plotly.express as px  # (version 4.7.0)
 import plotly.graph_objects as go
