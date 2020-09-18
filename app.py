@@ -4,6 +4,7 @@
 import os
 import tweepy as tw
 import pandas as pd
+import plotly.express as px
 
 access_token = '1279128353136574465-yGKBss8obvnK0LLT3nV6viICmDwbQB'
 access_secret = 'wrVAWl884P4t0PwU9JXloWRzshdhGZEnRcayoxSW8xE75'
