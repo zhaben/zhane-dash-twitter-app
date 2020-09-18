@@ -4,7 +4,13 @@
 import os
 import tweepy as tw
 import pandas as pd
-import plotly.express as px
+import plotly
+import plotly.express as px  # (version 4.7.0)
+import plotly.graph_objects as go
+
+import dash  # (version 1.12.0) pip install dash
+import dash_core_components as dcc
+import dash_html_components as html
 
 access_token = '1279128353136574465-yGKBss8obvnK0LLT3nV6viICmDwbQB'
 access_secret = 'wrVAWl884P4t0PwU9JXloWRzshdhGZEnRcayoxSW8xE75'
