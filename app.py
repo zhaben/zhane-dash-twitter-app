@@ -132,7 +132,8 @@ df_all.rename(columns={ df_all.columns[0]: "tweet" }, inplace = True)
 df_all.head()
 
 
-
+df = df_all
+df['sentiment_score'] = df.sentiment_score.astype('float')
 
 import pandas as pd
 import plotly.express as px  # (version 4.7.0)
@@ -196,14 +197,3 @@ def update_graph(my_dropdown):
 
 if __name__ == '__main__':
     app.run_server(debug=False)
-
-
-
-
-
-
-
-
-
-
-
