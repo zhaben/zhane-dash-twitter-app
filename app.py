@@ -41,7 +41,7 @@ tweets = tw.Cursor(api.search,
                    since='2018-04-23').items(20)
 
 metoo_tweets = [tweet.text for tweet in tweets]
-metoo_tweets[:5]
+metoo_tweets[:100]
 
 
 # In[23]:
@@ -55,7 +55,7 @@ tweets = tw.Cursor(api.search,
                    since='2018-04-23').items(20)
 
 blm_tweets = [tweet.text for tweet in tweets]
-blm_tweets[:5]
+blm_tweets[:100]
 
 
 # In[24]:
@@ -69,7 +69,7 @@ tweets = tw.Cursor(api.search,
                    since='2018-04-23').items(20)
 
 maga_tweets = [tweet.text for tweet in tweets]
-maga_tweets[:5]
+maga_tweets[:100]
 
 
 # ## Sentiment Analysis Using NLP
