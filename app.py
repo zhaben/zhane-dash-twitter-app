@@ -346,11 +346,11 @@ def render_content(tab):
                 figure={
                     'data': [
                         {'x': ['metoo', 'blm', 'maga'], 'y': [neu_num_metoo, neu_num_blm, neu_num_maga],
-                            'type': 'bar', 'name': 'Neutral'},
+                            'type': 'bar', 'name': 'Neutral', 'marker': {"color": 'rgba(131, 90, 241, 0.6)'}},
                         {'x': ['metoo', 'blm', 'maga'], 'y': [pos_num_metoo, pos_num_blm, pos_num_maga],
-                         'type': 'bar', 'name': 'Positive'},
+                         'type': 'bar', 'name': 'Positive', 'marker': {"color": 'rgba(184, 247, 212, 0.6)'}},
                         {'x': ['metoo', 'blm', 'maga'], 'y': [neg_num_metoo, neg_num_blm, neg_num_maga],
-                         'type': 'bar', 'name': 'Negative'}
+                         'type': 'bar', 'name': 'Negative', 'marker': {"color": 'rgba(255, 50, 50, 0.6)'}}
                     ]
                 }
             )
@@ -359,4 +359,3 @@ def render_content(tab):
 
 if __name__ == '__main__':
     app.run_server(debug=False)
-
