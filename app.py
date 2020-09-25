@@ -38,10 +38,10 @@ new_search = "#metoo -filter:retweets"
 tweets = tw.Cursor(api.search,
                    q=new_search,
                    lang="en",
-                   since='2018-04-23').items(20)
+                   since='2018-04-23').items(100)
 
 metoo_tweets = [tweet.text for tweet in tweets]
-metoo_tweets[:100]
+metoo_tweets[:5]
 
 
 # In[23]:
@@ -52,10 +52,10 @@ new_search = "#blm -filter:retweets"
 tweets = tw.Cursor(api.search,
                    q=new_search,
                    lang="en",
-                   since='2018-04-23').items(20)
+                   since='2018-04-23').items(100)
 
 blm_tweets = [tweet.text for tweet in tweets]
-blm_tweets[:100]
+blm_tweets[:5]
 
 
 # In[24]:
@@ -66,10 +66,10 @@ new_search = "#maga -filter:retweets"
 tweets = tw.Cursor(api.search,
                    q=new_search,
                    lang="en",
-                   since='2018-04-23').items(20)
+                   since='2018-04-23').items(100)
 
 maga_tweets = [tweet.text for tweet in tweets]
-maga_tweets[:100]
+maga_tweets[:5]
 
 
 # ## Sentiment Analysis Using NLP
