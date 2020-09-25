@@ -282,8 +282,8 @@ app.layout = html.Div([
     html.Br(),
     dcc.Tabs(id='tabs', value='tab-1', 
              children=[
-                dcc.Tab(label='Tab one', value='tab-1'),
-                dcc.Tab(label='Tab two', value='tab-2'),
+                dcc.Tab(label='1', value='tab-1'),
+                dcc.Tab(label='2', value='tab-2'),
     ]),
     html.Div(id='tabs-content')
 ])
