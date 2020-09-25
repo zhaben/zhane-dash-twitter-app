@@ -210,52 +210,51 @@ df[(df['hashtag'] == "#maga") & (df.sentiment_score == min((df['hashtag'] == "#m
 #need to create a function to do this for each hashtag
 import plotly.express as px
 
-df_pie = df[df['hashtag'] == '#metoo']
+df_pie_metoo = df[df['hashtag'] == '#metoo']
 
 #breaking positives, negatives, and neutrals in separate dataframes, 
 #selecting sentiment scores, 
 #ounting how many scores in each dataframe
 #making it a type string so that it can go into px.pie
 
-pos_num = df_pie[df_pie['sentiment_category'] == 'positive']['sentiment_score'].count().astype(str)
-neg_num = df_pie[df_pie['sentiment_category'] == 'negative']['sentiment_score'].count().astype(str)
-neu_num = df_pie[df_pie['sentiment_category'] == 'neutral']['sentiment_score'].count().astype(str)
+pos_num_metoo = df_pie_metoo[df_pie_metoo['sentiment_category'] == 'positive']['sentiment_score'].count().astype(str)
+neg_num_metoo = df_pie_metoo[df_pie_metoo['sentiment_category'] == 'negative']['sentiment_score'].count().astype(str)
+neu_num_metoo = df_pie_metoo[df_pie_metoo['sentiment_category'] == 'neutral']['sentiment_score'].count().astype(str)
 
-scores = [pos_num, neg_num, neu_num]
+scores = [pos_num_metoo, neg_num_metoo, neu_num_metoo]
 print(scores)
-fig = px.pie(df_pie, values=[pos_num, neg_num, neu_num], names= ['Positive', 'Negative', 'Neutral'], title='Me Too Sentimentient Categories')
+fig = px.pie(df_pie_metoo, values=[pos_num_metoo, neg_num_metoo, neu_num_metoo], names= ['Positive', 'Negative', 'Neutral'], title='Me Too Sentimentient Categories')
 fig.show()
 
 
 # In[37]:
 
 
-df_pie = df[df['hashtag'] == '#blm']
+df_pie_blm = df[df['hashtag'] == '#blm']
 
-pos_num = df_pie[df_pie['sentiment_category'] == 'positive']['sentiment_score'].count().astype(str)
-neg_num = df_pie[df_pie['sentiment_category'] == 'negative']['sentiment_score'].count().astype(str)
-neu_num = df_pie[df_pie['sentiment_category'] == 'neutral']['sentiment_score'].count().astype(str)
+pos_num_blm = df_pie_blm[df_pie_blm['sentiment_category'] == 'positive']['sentiment_score'].count().astype(str)
+neg_num_blm = df_pie_blm[df_pie_blm['sentiment_category'] == 'negative']['sentiment_score'].count().astype(str)
+neu_num_blm = df_pie_blm[df_pie_blm['sentiment_category'] == 'neutral']['sentiment_score'].count().astype(str)
 
-scores = [pos_num, neg_num, neu_num]
+scores = [pos_num_blm, neg_num_blm, neu_num_blm]
 print(scores)
-fig = px.pie(df_pie, values=[pos_num, neg_num, neu_num], names= ['Positive', 'Negative', 'Neutral'], title='BLM Sentimentient Categories')
+fig = px.pie(df_pie_blm, values=[pos_num_blm, neg_num_blm, neu_num_blm], names= ['Positive', 'Negative', 'Neutral'], title='BLM Sentimentient Categories')
 fig.show()
 
 
 # In[38]:
 
 
-df_pie = df[df['hashtag'] == '#maga']
+df_pie_maga = df[df['hashtag'] == '#maga']
 
-pos_num = df_pie[df_pie['sentiment_category'] == 'positive']['sentiment_score'].count().astype(str)
-neg_num = df_pie[df_pie['sentiment_category'] == 'negative']['sentiment_score'].count().astype(str)
-neu_num = df_pie[df_pie['sentiment_category'] == 'neutral']['sentiment_score'].count().astype(str)
+pos_num_maga = df_pie_maga[df_pie_maga['sentiment_category'] == 'positive']['sentiment_score'].count().astype(str)
+neg_num_maga = df_pie_maga[df_pie_maga['sentiment_category'] == 'negative']['sentiment_score'].count().astype(str)
+neu_num_maga = df_pie_maga[df_pie_maga['sentiment_category'] == 'neutral']['sentiment_score'].count().astype(str)
 
-scores = [pos_num, neg_num, neu_num]
+scores = [pos_num_maga, neg_num_maga, neu_num_maga]
 print(scores)
-fig = px.pie(df_pie, values=[pos_num, neg_num, neu_num], names= ['Positive', 'Negative', 'Neutral'], title='MAGA Sentimentient Categories')
+fig = px.pie(df_pie_maga, values=[pos_num_maga, neg_num_maga, neu_num_maga], names= ['Positive', 'Negative', 'Neutral'], title='MAGA Sentimentient Categories')
 fig.show()
-
 
 # # Launching Visualization to Dash
 
