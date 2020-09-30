@@ -293,65 +293,67 @@ app.layout = html.Div([
         [Input('tabs', 'value')])
 
 def render_content(tab):
-    if tab == 'tab-1':
-        return html.Div([
-            html.H3('Sentiment Scores'),
-                dcc.Graph(
-                    figure={
-                            'data': [
-                            {'x': ['metoo', 'blm', 'maga'], 'y': [neu_num_metoo, neu_num_blm, neu_num_maga],
-                                'type': 'bar', 'name': 'Neutral', 'marker': {"color": 'rgba(131, 90, 241, 0.6)'}},
-                            {'x': ['metoo', 'blm', 'maga'], 'y': [pos_num_metoo, pos_num_blm, pos_num_maga],
-                             'type': 'bar', 'name': 'Positive', 'marker': {"color": 'rgba(184, 247, 212, 0.6)'}},
-                            {'x': ['metoo', 'blm', 'maga'], 'y': [neg_num_metoo, neg_num_blm, neg_num_maga],
-                             'type': 'bar', 'name': 'Negative', 'marker': {"color": 'rgba(255, 50, 50, 0.6)'}}
-                                    ]
-                            })
-                        ])
-
-    elif tab == 'tab-2':        
+     if tab == 'tab-1':
         return html.Div([
             html.H3('#metoo'),
                 dcc.Graph(figure={
                                 'data': [
-                                        go.Pie(
-                                            labels=['Positives', 'Negatives', 'Neutrals'], 
-                                            values=[pos_num_metoo, neg_num_metoo, neu_num_metoo],
-                                            name="View Metrics",
-                                            marker_colors=['rgba(184, 247, 212, 0.6)','rgba(255, 50, 50, 0.6)','rgba(131, 90, 241, 0.6)'],
-                                            textinfo='value',
-                                            hole=.65)
-                                        ]
+                                    go.Pie(
+                                        labels=['Positives', 'Negatives', 'Neutrals'], 
+                                        values=[pos_num_metoo, neg_num_metoo, neu_num_metoo],
+                                        name="View Metrics",
+                                        marker_colors=['rgba(184, 247, 212, 0.6)','rgba(255, 50, 50, 0.6)','rgba(131, 90, 241, 0.6)'],
+                                        textinfo='value',
+                                        hole=.65)
+                                ]
 
-                                }),
+                            }),
             html.H3('#blm'),
                 dcc.Graph(figure={
                                 'data': [
-                                        go.Pie(
-                                            labels=['Positives', 'Negatives', 'Neutrals'], 
-                                            values=[pos_num_blm, neg_num_blm, neu_num_blm],
-                                            name="View Metrics",
-                                            marker_colors=['rgba(184, 247, 212, 0.6)','rgba(255, 50, 50, 0.6)','rgba(131, 90, 241, 0.6)'],
-                                            textinfo='value',
-                                            hole=.65)
-                                        ]
+                                    go.Pie(
+                                        labels=['Positives', 'Negatives', 'Neutrals'], 
+                                        values=[pos_num_blm, neg_num_blm, neu_num_blm],
+                                        name="View Metrics",
+                                        marker_colors=['rgba(184, 247, 212, 0.6)','rgba(255, 50, 50, 0.6)','rgba(131, 90, 241, 0.6)'],
+                                        textinfo='value',
+                                        hole=.65)
+                                ]
 
-                                }),
+                            }),
             html.H3('#maga'),
                 dcc.Graph(figure={
                                 'data': [
-                                        go.Pie(
-                                            labels=['Positives', 'Negatives', 'Neutrals'], 
-                                            values=[pos_num_maga, neg_num_maga, neu_num_maga],
-                                            name="View Metrics",
-                                            marker_colors=['rgba(184, 247, 212, 0.6)','rgba(255, 50, 50, 0.6)','rgba(131, 90, 241, 0.6)'],
-                                            textinfo='value',
-                                            hole=.65)
-                                        ]
+                                    go.Pie(
+                                        labels=['Positives', 'Negatives', 'Neutrals'], 
+                                        values=[pos_num_maga, neg_num_maga, neu_num_maga],
+                                        name="View Metrics",
+                                        marker_colors=['rgba(184, 247, 212, 0.6)','rgba(255, 50, 50, 0.6)','rgba(131, 90, 241, 0.6)'],
+                                        textinfo='value',
+                                        hole=.65)
+                                ]
 
-                                })
+                            })
         
-                        ])
+        ])
+    
+    
+    elif tab == 'tab-2':
+        return html.Div([
+            html.H3('Sentiment Scores'),
+        dcc.Graph(
+                figure={
+                    'data': [
+                        {'x': ['metoo', 'blm', 'maga'], 'y': [neu_num_metoo, neu_num_blm, neu_num_maga],
+                            'type': 'bar', 'name': 'Neutral', 'marker': {"color": 'rgba(131, 90, 241, 0.6)'}},
+                        {'x': ['metoo', 'blm', 'maga'], 'y': [pos_num_metoo, pos_num_blm, pos_num_maga],
+                         'type': 'bar', 'name': 'Positive', 'marker': {"color": 'rgba(184, 247, 212, 0.6)'}},
+                        {'x': ['metoo', 'blm', 'maga'], 'y': [neg_num_metoo, neg_num_blm, neg_num_maga],
+                         'type': 'bar', 'name': 'Negative', 'marker': {"color": 'rgba(255, 50, 50, 0.6)'}}
+                    ]
+                }
+            )
+        ])
   
   
 if __name__ == '__main__':
