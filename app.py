@@ -293,11 +293,10 @@ app.layout = html.Div([
         [Input('tabs', 'value')])
 
 def render_content(tab):
-    
-    if tab == 'tab-1':
+  if tab == 'tab-1':
         return html.Div([
             html.H3('Sentiment Scores'),
-            dcc.Graph(
+        dcc.Graph(
                 figure={
                     'data': [
                         {'x': ['metoo', 'blm', 'maga'], 'y': [neu_num_metoo, neu_num_blm, neu_num_maga],
@@ -310,8 +309,8 @@ def render_content(tab):
                 }
             )
         ])
-      
-     elif tab == 'tab-2':
+
+    elif tab == 'tab-2':        
         return html.Div([
             html.H3('#metoo'),
                 dcc.Graph(figure={
@@ -354,6 +353,7 @@ def render_content(tab):
                             })
         
         ])
+
 
 
 if __name__ == '__main__':
