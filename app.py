@@ -278,7 +278,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 app.layout = html.Div([
-    html.H1("Twitter Hashtag Dashboard", style={'text-align': 'center'}),
+    html.H1("Twitter Hashtag Sentiment Tracker", style={'text-align': 'center'}),
     html.Br(),
     dcc.Tabs(id='tabs', value='tab-1', 
              children=[
