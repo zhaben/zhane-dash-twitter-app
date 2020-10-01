@@ -29,6 +29,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 
 import tweepy
 import csv
+'''
 # Open/create a file to append data to
 csvFile = open('result-1.csv', 'a')
 
@@ -94,7 +95,7 @@ for tweet in tweepy.Cursor(api.search,
 #    print(tweet.created_at, tweet.text, tweet.coordinates, new_search)
 #print(dir(tweet))
 csvFile.close()
-
+'''
 
 # In[5]:
 
